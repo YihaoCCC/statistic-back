@@ -18,4 +18,6 @@ public class User implements Serializable {
     private Integer departmentId;
 
     private static final long serialVersionUID = 1L;
+
+    private Dept dept;
 }

@@ -5,6 +5,7 @@ import com.example.statisticback.entity.User;
 import com.example.statisticback.service.UserService;
 import com.example.statisticback.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,10 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     private UserService userService;
-
-//    private UserService userService =  new UserServiceImpl();
-
-
+//    private UserServiceImpl userServiceIml =  new UserServiceImpl();
 
     @PostMapping("/user/login")
     private Responce userLogin(@RequestBody User user) {
