@@ -26,4 +26,11 @@ public class UserServiceImpl implements UserService {
             return  Responce.success("登录成功！", user1);
         }
     }
+    @Override
+    public Responce getUserInfo(int userId) {
+        User user = userDao.selectByPrimaryKey(userId);
+        Dept dept = deptDao.selectByPrimaryKey(user.getDepartmentId());
+        user.setDept(dept);
+        return Responce.success("获取用户信息成功！",user);
+    }
 }

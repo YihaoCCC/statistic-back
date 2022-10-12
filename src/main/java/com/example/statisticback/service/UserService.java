@@ -5,4 +5,6 @@ import com.example.statisticback.entity.User;
 
 public interface UserService {
     Responce userLogin(User user);
+
+    Responce getUserInfo(int userId);
 }
