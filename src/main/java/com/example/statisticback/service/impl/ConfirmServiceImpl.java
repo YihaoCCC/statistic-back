@@ -34,4 +34,16 @@ public class ConfirmServiceImpl implements ConfirmService {
             return Responce.error("当前时间已超过15：00，请联系部门秘书统计！", null);
         }
     }
+
+    @Override
+    public Integer isTodayConfirm(Confirm confirm) {
+        Date date = new Date();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
+        confirm.setTime(date);
+        if(confirmDao.selectByUseIdAndTime(confirm) == null) {
+            return 0;
+        } else  {
+            return 1;
+        }
+    }
 }

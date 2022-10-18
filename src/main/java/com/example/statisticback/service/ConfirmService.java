@@ -5,4 +5,6 @@ import com.example.statisticback.entity.Respose.Responce;
 
 public interface ConfirmService {
     Responce sureConfirm(Confirm confirm);
+
+    Integer isTodayConfirm(Confirm confirm);
 }
